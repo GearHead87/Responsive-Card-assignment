@@ -1,9 +1,10 @@
 import * as React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Star, MapPin, ExternalLink, Heart, ThumbsUp } from 'lucide-react';
 import { HotelCardProps } from '@/libs/types';
 import { Amenity } from './Amenity';
 import { Badge } from './Badge';
+import ImageWithBlur from './shared/ImageWithBlur';
 
 export const HotelCard: React.FC<HotelCardProps> = ({
 	name,
@@ -19,17 +20,12 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 }) => {
 	return (
 		<div className="max-w-sm md:w-full lg:max-w-screen-lg mx-auto">
-			<div className="flex flex-col lg:flex-row bg-white rounded-2xl border border-zinc-300 lg:border-none lg:shadow-lg p-2.5 lg:p-4">
+			<div className="flex flex-col lg:flex-row bg-white rounded-2xl border border-zinc-300 lg:border-none lg:shadow-lg p-2.5 lg:p-4 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
 				{/* Image Section */}
 				<div className="relative w-full lg:w-[300px] aspect-[1.592] lg:aspect-[1.551] rounded-2xl overflow-hidden">
-					<Image
-						src={image}
-						alt={`${name} exterior view`}
-						fill
-						className="object-cover"
-					/>
-					<button className="absolute top-4 right-4 p-2 rounded-full bg-neutral-400/30">
-						<Heart className="w-5 h-5 text-white" />
+					<ImageWithBlur name={name} image={image} />
+					<button className="absolute top-4 right-4 p-2 rounded-full bg-neutral-400/30 transition-transform duration-300 ease-in-out hover:scale-110">
+						<Heart className="w-5 h-5 text-white transition-colors duration-300 ease-in-out hover:text-red-500" />
 					</button>
 				</div>
 
@@ -59,7 +55,7 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 
 						{/* Map Link */}
 						<div className="flex lg:items-center mt-4 flex-col-reverse lg:flex-row gap-3">
-							<button className="flex items-center gap-2 text-xs lg:text-sm font-bold text-indigo-600">
+							<button className="flex items-center gap-2 text-xs lg:text-sm font-bold text-indigo-600 transition-colors duration-300 ease-in-out hover:text-indigo-800">
 								View property in map
 								<ExternalLink className="w-4 h-4" />
 							</button>
@@ -118,7 +114,7 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 							{stayDetails.adults} Adult, {stayDetails.children} Child
 						</div>
 
-						<button className="w-full lg:w-auto px-5 py-2 mt-4 text-sm lg:text-base font-medium text-indigo-600 rounded border border-indigo-600">
+						<button className="w-full lg:w-auto px-5 py-2 mt-4 text-sm lg:text-base font-medium text-indigo-600 rounded border border-indigo-600 transition-all duration-300 ease-in-out hover:bg-indigo-600 hover:text-white">
 							Choose Room
 						</button>
 					</div>
@@ -134,7 +130,7 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 							</span>
 						</div>
 
-						<button className="px-2 py-1 text-sm font-medium text-indigo-600 rounded border border-indigo-600">
+						<button className="px-2 py-1 text-sm font-medium text-indigo-600 rounded border border-indigo-600 transition-all duration-300 ease-in-out hover:bg-indigo-600 hover:text-white">
 							Choose Room
 						</button>
 					</div>
