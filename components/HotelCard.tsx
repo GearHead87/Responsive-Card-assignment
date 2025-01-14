@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { Star, MapPin, ExternalLink, Heart, Badge } from 'lucide-react';
+import { Star, MapPin, ExternalLink, Heart, ThumbsUp } from 'lucide-react';
 import { HotelCardProps } from '@/libs/types';
 import { Amenity } from './Amenity';
+import { Badge } from './Badge';
 
 export const HotelCard: React.FC<HotelCardProps> = ({
 	name,
@@ -17,8 +18,8 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 	stayDetails,
 }) => {
 	return (
-		<div className="w-full max-w-[336px] md:max-w-none">
-			<div className="flex flex-col md:flex-row bg-white rounded-2xl border border-zinc-300 md:border-none md:shadow-[0px_0px_16px_rgba(0,0,0,0.12)] p-2.5 md:p-4">
+		<div className="max-w-[336px] md:max-w-none mx-auto">
+			<div className="flex flex-col md:flex-row bg-white rounded-2xl border border-zinc-300 md:border-none md:shadow-lg p-2.5 md:p-4">
 				{/* Image Section */}
 				<div className="relative w-full md:w-[300px] aspect-[1.592] md:aspect-[1.551] rounded-2xl overflow-hidden">
 					<Image
@@ -36,8 +37,8 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 				<div className="flex flex-col md:flex-row flex-1 mt-4 md:mt-0 md:ml-5">
 					<div className="flex-1">
 						{/* Header */}
-						<div className="flex justify-between items-start">
-							<h2 className="text-base md:text-2xl font-bold tracking-wider">
+						<div className="flex justify-between items-center">
+							<h2 className="text-base md:text-2xl font-bold tracking-wider text-black">
 								{name}
 							</h2>
 							<div className="flex gap-0.5">
@@ -51,19 +52,19 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 						</div>
 
 						{/* Address */}
-						<p className="mt-3 text-sm md:text-base tracking-wider text-zinc-600">
+						<p className="flex items-center gap-1 mt-3 text-sm md:text-base tracking-wider text-zinc-600">
+							<MapPin className="w-4 h-4 text-indigo-600" />
 							{address}
 						</p>
 
 						{/* Map Link */}
-						<div className="flex justify-between mt-3">
+						<div className="flex justify-between mt-3 flex-col-reverse md:flex-row gap-3">
 							<button className="flex items-center gap-2 text-xs md:text-sm font-bold text-indigo-600">
 								View property in map
 								<ExternalLink className="w-4 h-4" />
 							</button>
 							<div className="flex items-center gap-1 text-xs md:text-sm font-medium text-neutral-700">
-								<MapPin className="w-4 h-4" />
-								{distanceFromCenter} KM from center
+								📍 {distanceFromCenter} KM from center
 							</div>
 						</div>
 
@@ -76,7 +77,7 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 
 						{/* Rating Box */}
 						<div className="inline-flex items-center gap-2 px-2 py-1.5 mt-3 bg-neutral-200/30 rounded-xl">
-							<Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+							<ThumbsUp className="w-4 h-4 fill-indigo-600 text-indigo-600" />
 							<span className="text-sm md:text-base font-medium">
 								<span className="text-black">{rating} </span>
 								<span className="text-zinc-600">({reviews} reviews)</span>
@@ -87,8 +88,8 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 					{/* Divider */}
 					<div className="my-4 md:mx-4 border-t md:border-l border-dashed border-zinc-600" />
 
-					{/* Price Section */}
-					<div className="flex flex-col">
+					{/* Price Section for Large Display */}
+					<div className="md:flex flex-col hidden">
 						<div className="flex gap-4 md:justify-end">
 							{badges.map((badge, index) => (
 								<Badge key={index} {...badge} />
@@ -118,6 +119,22 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 						</div>
 
 						<button className="w-full md:w-auto px-5 py-2 mt-4 text-sm md:text-base font-medium text-indigo-600 rounded border border-indigo-600">
+							Choose Room
+						</button>
+					</div>
+
+					{/* Price Section for smaller Display */}
+					<div className="flex flex-row gap-4 md:hidden">
+						<div className="flex items-center gap-2 mt-4 md:justify-end">
+							<span className="text-xl font-bold text-indigo-600">
+								₹{price.discounted.toFixed(2)}
+							</span>
+							<span className="text-sm text-zinc-600 font-semibold md:text-right">
+								/ {stayDetails.nights} nights
+							</span>
+						</div>
+
+						<button className="px-2 py-1 text-sm font-medium text-indigo-600 rounded border border-indigo-600">
 							Choose Room
 						</button>
 					</div>
