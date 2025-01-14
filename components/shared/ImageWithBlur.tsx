@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import Image, { ImageProps } from 'next/image';
 import React, { useState, useEffect } from 'react';
 
@@ -26,9 +26,13 @@ export const ImageWithBlur: React.FC<ImageWithBlurProps> = ({
 				src={image}
 				alt={`${name} exterior view`}
 				className={`
-          duration-700 ease-in-out
-          ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}
-          ${className || ''}
+                            duration-500 ease-in-out
+                            ${
+								isLoading
+									? 'scale-110 blur-2xl grayscale'
+									: 'scale-100 blur-0 grayscale-0'
+							}
+                            ${className || ''}
         `}
 				onLoadingComplete={() => setIsLoading(false)}
 				placeholder="blur"
