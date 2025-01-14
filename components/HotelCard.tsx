@@ -64,7 +64,7 @@ export const HotelCard: React.FC<HotelCardProps> = ({
 								<ExternalLink className="w-4 h-4" />
 							</button>
 							<div className="flex items-center gap-1 text-xs lg:text-sm font-semibold text-neutral-700">
-								📍 {distanceFromCenter} KM from center 
+								📍 {distanceFromCenter} KM from center
 							</div>
 						</div>
 

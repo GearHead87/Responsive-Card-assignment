@@ -2,7 +2,7 @@ import { HotelCard } from '@/components/HotelCard';
 import { hotelData } from '@/libs/hotelData';
 export default function Home() {
 	return (
-		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2'>
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2">
 			{hotelData.map((hotel, index) => (
 				<HotelCard
 					key={index}
