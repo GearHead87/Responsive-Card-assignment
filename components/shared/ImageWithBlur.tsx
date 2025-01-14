@@ -16,7 +16,6 @@ export const ImageWithBlur: React.FC<ImageWithBlurProps> = ({
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		// Reset loading state when image source changes
 		setIsLoading(true);
 	}, [image]);
 
@@ -29,7 +28,7 @@ export const ImageWithBlur: React.FC<ImageWithBlurProps> = ({
                             duration-500 ease-in-out
                             ${
 								isLoading
-									? 'scale-110 blur-2xl grayscale'
+									? 'scale-110 blur-2xl grayscale-50'
 									: 'scale-100 blur-0 grayscale-0'
 							}
                             ${className || ''}
