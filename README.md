@@ -80,5 +80,5 @@ HotelCard is a modern hotel listing card component designed for both web and mob
 
 ## 👨‍💻 Author
 **Hosan Ul Islam**
-- LinkedIn: [Hosan Ul Islam](https://linkedin.com/in/hosanulislam)
+- LinkedIn: [Hosan Ul Islam](https://www.linkedin.com/in/hosan-ul-islam/)
 
