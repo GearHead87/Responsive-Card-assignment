@@ -1,7 +1,7 @@
 import {
 	Wifi,
-	PocketIcon as Pool,
-	Mountain,
+	WavesLadder,
+	Binoculars,
 	Waves,
 	Utensils,
 	CircleParking,
@@ -29,8 +29,8 @@ export const hotelData: HotelCardProps[] = [
 		],
 		amenities: [
 			{ icon: Wifi, label: 'Free Wifi' },
-			{ icon: Pool, label: 'Swimming Pool' },
-			{ icon: Mountain, label: 'City View' },
+			{ icon: WavesLadder, label: 'Swimming Pool' },
+			{ icon: Binoculars, label: 'City View' },
 		],
 		stayDetails: {
 			nights: 3,
@@ -76,7 +76,7 @@ export const hotelData: HotelCardProps[] = [
 		amenities: [
 			{ icon: Wifi, label: 'Free Wifi' },
 			{ icon: CircleParking, label: 'Free Parking' },
-			{ icon: Pool, label: 'Swimming Pool' },
+			{ icon: WavesLadder, label: 'Swimming Pool' },
 		],
 		stayDetails: {
 			nights: 3,
@@ -99,7 +99,7 @@ export const hotelData: HotelCardProps[] = [
 		amenities: [
 			{ icon: Wifi, label: 'Free Wifi' },
 			{ icon: Dumbbell, label: 'Fitness Center' },
-			{ icon: Mountain, label: 'City View' },
+			{ icon: Binoculars, label: 'City View' },
 		],
 		stayDetails: {
 			nights: 4,
@@ -144,7 +144,7 @@ export const hotelData: HotelCardProps[] = [
 		badges: [{ label: 'Best', variant: 'secondary' }],
 		amenities: [
 			{ icon: Wifi, label: 'Free Wifi' },
-			{ icon: Pool, label: 'Swimming Pool' },
+			{ icon: WavesLadder, label: 'Swimming Pool' },
 			{ icon: Sun, label: 'Sun Deck' },
 		],
 		stayDetails: {
