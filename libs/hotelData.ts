@@ -176,5 +176,51 @@ export const hotelData: HotelCardProps[] = [
 			children: 1,
 		},
 	},
+	{
+		name: 'Hotel Test',
+		address: 'Baliapanda, Puri, Odisha-752006',
+		rating: 4.6,
+		reviews: 28,
+		distanceFromCenter: 6.5,
+		price: {
+			original: 35000.0,
+			discounted: 32000.0,
+		},
+		image: 'https://i.travelapi.com/lodging/35000000/34990000/34984100/34984039/ba2f56b6.jpg',
+		badges: [{ label: 'Cheapest', variant: 'primary' }],
+		amenities: [
+			{ icon: Wifi, label: 'Free Wifi' },
+			{ icon: CircleParking, label: 'Parking' },
+			{ icon: Coffee, label: 'Cafe' },
+		],
+		stayDetails: {
+			nights: 3,
+			adults: 2,
+			children: 1,
+		},
+	},
+	{
+		name: 'Hotel Test bigger',
+		address: 'Baliapanda, Puri, Odisha-752006',
+		rating: 4.6,
+		reviews: 28,
+		distanceFromCenter: 6.5,
+		price: {
+			original: 35000.0,
+			discounted: 32000.0,
+		},
+		image: 'https://i.travelapi.com/lodging/39000000/38760000/38756900/38756892/53d61a2a.jpg',
+		badges: [{ label: 'Cheapest', variant: 'primary' }],
+		amenities: [
+			{ icon: Wifi, label: 'Free Wifi' },
+			{ icon: CircleParking, label: 'Parking' },
+			{ icon: Coffee, label: 'Cafe' },
+		],
+		stayDetails: {
+			nights: 3,
+			adults: 2,
+			children: 1,
+		},
+	},
 	// Continue for 8 more hotels to make it 15 entries.
 ];
